@@ -5,7 +5,11 @@ import { ArrowUpRight, LinkIcon, Mail, Sparkles } from "lucide-react";
 const socialLinks = [
   { label: "Email", href: "mailto:hello@mrhlaing.dev", icon: Mail },
   { label: "GitHub", href: "https://github.com/mrhlaingdev", icon: LinkIcon },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: Sparkles },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/win-hlaing-tun-0436a8416/",
+    icon: Sparkles,
+  },
 ];
 
 export default function Footer() {
