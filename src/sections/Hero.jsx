@@ -1,12 +1,23 @@
 import Image from "next/image";
-import { ArrowUpRight, Camera, Download, Palette } from "lucide-react";
-import GitHubMark from "@/components/GitHubMark";
+import { Download, Mail } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const socialLinks = [
-  { label: "Instagram", href: "#", icon: Camera },
-  { label: "LinkedIn", href: "#", icon: ArrowUpRight },
-  { label: "Dribbble", href: "#", icon: Palette },
-  { label: "GitHub", href: "https://github.com/mrhlaingdev", icon: GitHubMark },
+  { 
+    label: "LinkedIn", 
+    href: "https://www.linkedin.com/in/win-hlaing-tun-0436a8416/", 
+    icon: FaLinkedin 
+  },
+  { 
+    label: "GitHub", 
+    href: "https://github.com/mrhlaingdev", 
+    icon: FaGithub 
+  },
+  { 
+    label: "Gmail", 
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=winhlaingt760@gmail.com", 
+    icon: Mail 
+  },
 ];
 
 const stats = [
@@ -35,31 +46,31 @@ export default function Hero() {
               <h1 className="text-4xl font-black leading-none tracking-tight text-white sm:text-5xl lg:text-6xl">
                 Mr Hlaing
               </h1>
-              <h2 className="text-3xl font-black leading-tight text-[#FD6F00] sm:text-4xl lg:text-[3.05rem]">
+              <h2 className="text-2xl font-bold leading-tight text-[#FD6F00] sm:text-3xl lg:text-4xl">
                 AI Builder &amp; Video Creator
               </h2>
+              <p className="text-sm text-neutral-400 leading-relaxed max-w-md pt-1">
+                Combining AI workflows with web development and post-production skills to build fast, high-quality digital products and engaging visual stories.
+              </p>
             </div>
 
-            <div className="mt-7 flex items-center gap-3">
-              {socialLinks.map(({ label, href, icon: Icon }) => {
-                const isExternal = href.startsWith("http");
-
-                return (
-                  <a
-                    key={label}
-                    href={href}
-                    aria-label={label}
-                    target={isExternal ? "_blank" : undefined}
-                    rel={isExternal ? "noopener noreferrer" : undefined}
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 bg-[#1E1E1E] text-neutral-300 transition hover:border-orange-500/50 hover:text-orange-300"
-                  >
-                    <Icon className="h-4 w-4" />
-                  </a>
-                );
-              })}
+            {/* Social Links (LinkedIn, GitHub, Gmail) */}
+            <div className="mt-6 flex items-center gap-3">
+              {socialLinks.map(({ label, href, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 bg-[#1E1E1E] text-neutral-300 transition hover:border-orange-500/60 hover:text-orange-400 hover:shadow-[0_0_12px_rgba(253,111,0,0.3)]"
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
+              ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-7 flex flex-wrap gap-4">
               <a
                 href="#contact"
                 className="inline-flex items-center justify-center rounded-lg bg-[#FD6F00] px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-600"
@@ -67,7 +78,8 @@ export default function Hero() {
                 Hire Me
               </a>
               <a
-                href="#"
+                href="/cv.pdf"
+                download
                 className="inline-flex items-center justify-center rounded-lg border border-neutral-700 bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800"
               >
                 <span className="inline-flex items-center gap-2">
@@ -90,15 +102,17 @@ export default function Hero() {
           </div>
         </div>
 
+        {/* Profile Image Section */}
         <div className="relative flex items-center justify-center px-4 pb-2 pt-4 sm:px-6 lg:px-4">
-          <div className="relative flex h-[300px] w-[300px] items-center justify-center rounded-full bg-[#1E1E1E] sm:h-[360px] sm:w-[360px] lg:h-[420px] lg:w-[420px]">
-            <div className="relative h-[92%] w-[92%] overflow-hidden rounded-full bg-[#171717]">
+          <div className="relative flex h-[280px] w-[280px] items-center justify-center rounded-full border border-orange-500/30 bg-orange-500/5 p-2 shadow-[0_0_40px_rgba(253,111,0,0.15)] sm:h-[340px] sm:w-[340px] lg:h-[380px] lg:w-[380px]">
+            <div className="relative h-full w-full overflow-hidden rounded-full border-2 border-orange-500/60 bg-neutral-900">
               <Image
                 src="/logo.jpg"
                 alt="Mr Hlaing portrait"
                 width={500}
                 height={500}
                 className="h-full w-full object-cover object-center"
+                priority
               />
             </div>
           </div>
