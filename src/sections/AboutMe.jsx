@@ -12,11 +12,11 @@ export default function AboutMe() {
       <div className="glass-panel p-8">
         <SectionHeading
           eyebrow="About"
-          title="A creative developer with a product mindset"
-          subtitle="I combine front-end craft, visual storytelling, and structured thinking to create digital experiences that feel polished and purposeful."
+          title="Building web experiences with AI and telling stories through video"
+          subtitle="I build modern web projects using AI tools and create engaging video content with CapCut + AI to turn ideas into polished digital experiences."
         />
         <p className="mt-6 text-base leading-8 text-neutral-300">
-          My work is rooted in curiosity, consistency, and the desire to learn quickly. I enjoy turning ideas into thoughtful interfaces, meaningful systems, and memorable creative outputs.
+          I combine product thinking, creative execution, and AI-assisted workflows to design websites, experiments, and visual content that feel useful, modern, and memorable. From web builds to short-form video storytelling, I enjoy using the right tools to move faster and produce better results.
         </p>
       </div>
 

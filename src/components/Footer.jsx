@@ -4,7 +4,7 @@ import { ArrowUpRight, LinkIcon, Mail, Sparkles } from "lucide-react";
 
 const socialLinks = [
   { label: "Email", href: "mailto:hello@mrhlaing.dev", icon: Mail },
-  { label: "GitHub", href: "https://github.com", icon: LinkIcon },
+  { label: "GitHub", href: "https://github.com/mrhlaingdev", icon: LinkIcon },
   { label: "LinkedIn", href: "https://linkedin.com", icon: Sparkles },
 ];
 
@@ -34,7 +34,7 @@ export default function Footer() {
                   key={link.label}
                   href={link.href}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="rounded-full border border-neutral-700 bg-neutral-900/50 p-2.5 text-neutral-300 transition hover:border-orange-500/50 hover:text-orange-300"
                   aria-label={link.label}
                 >

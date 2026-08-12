@@ -17,7 +17,20 @@ export default function Contact() {
             </div>
             <div className="rounded-[14px] border border-neutral-800 bg-[#1E1E1E] p-5">
               <p className="text-sm uppercase tracking-[0.3em] text-[#FD6F00]">Socials</p>
-              <p className="mt-2 text-sm text-neutral-300">GitHub • LinkedIn • Instagram</p>
+              <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-neutral-300">
+                <a
+                  href="https://github.com/mrhlaingdev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-orange-300 underline-offset-4 hover:underline"
+                >
+                  GitHub
+                </a>
+                <span>•</span>
+                <span>LinkedIn</span>
+                <span>•</span>
+                <span>Instagram</span>
+              </div>
             </div>
           </div>
         </div>

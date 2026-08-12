@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -52,6 +53,16 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+
+          <a
+            href="https://github.com/mrhlaingdev"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-700 bg-neutral-900/50 text-neutral-300 transition hover:border-orange-500/50 hover:text-orange-300"
+          >
+            <FaGithub className="h-4 w-4" />
+          </a>
         </div>
       </nav>
 

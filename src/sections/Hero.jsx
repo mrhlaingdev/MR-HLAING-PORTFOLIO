@@ -1,11 +1,12 @@
 import Image from "next/image";
-import { ArrowUpRight, Camera, Code2, Download, Palette } from "lucide-react";
+import { ArrowUpRight, Camera, Download, Palette } from "lucide-react";
+import GitHubMark from "@/components/GitHubMark";
 
 const socialLinks = [
   { label: "Instagram", href: "#", icon: Camera },
   { label: "LinkedIn", href: "#", icon: ArrowUpRight },
   { label: "Dribbble", href: "#", icon: Palette },
-  { label: "GitHub", href: "#", icon: Code2 },
+  { label: "GitHub", href: "https://github.com/mrhlaingdev", icon: GitHubMark },
 ];
 
 const stats = [
@@ -35,21 +36,27 @@ export default function Hero() {
                 Mr Hlaing
               </h1>
               <h2 className="text-3xl font-black leading-tight text-[#FD6F00] sm:text-4xl lg:text-[3.05rem]">
-                Frontend Developer &amp; Designer
+                AI Builder &amp; Video Creator
               </h2>
             </div>
 
             <div className="mt-7 flex items-center gap-3">
-              {socialLinks.map(({ label, href, icon: Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 bg-[#1E1E1E] text-neutral-300 transition hover:border-orange-500/50 hover:text-orange-300"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+              {socialLinks.map(({ label, href, icon: Icon }) => {
+                const isExternal = href.startsWith("http");
+
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-700 bg-[#1E1E1E] text-neutral-300 transition hover:border-orange-500/50 hover:text-orange-300"
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                );
+              })}
             </div>
 
             <div className="mt-8 flex flex-wrap gap-4">
