@@ -1,79 +1,67 @@
-'use client';
-
-import { useMemo, useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import SectionHeading from "@/components/SectionHeading";
-import { projects } from "@/data/portfolioData";
+
+const REAL_PROJECTS = [
+  {
+    id: "vet-clinic",
+    name: "Vet Clinic Dashboard",
+    category: "AI & Web",
+    summary:
+      "Interactive admin panel for managing pet medical records, appointments, and featuring an integrated AI Symptom Checker.",
+    tech: ["Next.js", "AI Integration", "Tailwind CSS", "Vercel"],
+    github: "https://github.com/mrhlaingdev/The-Vet-Clinic-Deskboard",
+    demo: "https://the-vet-clinic-deskboard.vercel.app",
+    image: "/the-vet-clinic.jpg.png",
+  },
+  {
+    id: "pixel-forge",
+    name: "Pixel Forge Launcher",
+    category: "AI & Web",
+    summary:
+      "A sleek desktop-inspired game launcher UI interface crafted with responsive dark-mode styling and dynamic asset showcases.",
+    tech: ["React", "UI/UX", "Tailwind CSS", "Vercel"],
+    github: "https://github.com/mrhlaingdev/pixel-forge-launcher",
+    demo: "https://pixel-forge-launcher.vercel.app",
+    image: "/pixel-forge-luncher.jpg.png",
+  },
+  {
+    id: "farm-to-table",
+    name: "Farm-to-Table Marketplace",
+    category: "Workflow & Systems",
+    summary:
+      "A modern digital marketplace platform connecting local fresh farm producers directly with consumers with PRD & Tech specs.",
+    tech: ["Next.js", "E-commerce Logic", "Tailwind CSS", "Vercel"],
+    github: "https://github.com/mrhlaingdev/farm-to-table-marketplace",
+    demo: "https://farm-to-table-marketplace-seven.vercel.app",
+    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop",
+  },
+  {
+    id: "soundwave",
+    name: "Soundwave Festival App",
+    category: "Branding & Digital Experience",
+    summary:
+      "An event management web experience designed for music festival showcases and line-ups.",
+    tech: ["Next.js", "Motion UI", "Tailwind CSS", "Vercel"],
+    github: "https://github.com/mrhlaingdev/soundwave-festival-app",
+    demo: "https://soundwave-festival-app-whdz.vercel.app",
+    image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1000&auto=format&fit=crop",
+  },
+];
 
 export default function FeaturedProjects() {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [showAll, setShowAll] = useState(false);
-
-  const categories = useMemo(
-    () => ["All", ...Array.from(new Set(projects.map((project) => project.category)))],
-    []
-  );
-
-  const filteredProjects = useMemo(
-    () =>
-      activeCategory === "All"
-        ? projects
-        : projects.filter((project) => project.category === activeCategory),
-    [activeCategory]
-  );
-
-  const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
-
   return (
-    <section id="projects" className="relative space-y-6">
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-[2rem]">
-        <div className="absolute left-[-10%] top-[-20%] h-72 w-72 rounded-full bg-orange-500/12 blur-[140px]" />
-        <div className="absolute bottom-[-10%] right-[-5%] h-64 w-64 rounded-full bg-orange-400/12 blur-[140px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:44px_44px] opacity-25" />
-      </div>
+    <section id="projects" className="space-y-6">
       <SectionHeading
         eyebrow="Projects"
-        title="Selected work with a cinematic feel"
-        subtitle="A growing collection of projects that reflect both technical execution and creative intent."
+        title="Real Work & Production Deploys"
+        subtitle="A showcase of live web applications, AI integrations, and full-stack solutions deployed on Vercel."
       />
 
-      <div className="flex flex-wrap items-center gap-3 rounded-[1.75rem] border border-neutral-800 bg-neutral-950/70 p-4">
-        {categories.map((category) => (
-          <button
-            key={category}
-            type="button"
-            onClick={() => {
-              setActiveCategory(category);
-              setShowAll(false);
-            }}
-            className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
-              category === activeCategory
-                ? "border-orange-300/80 bg-orange-500/10 text-orange-200"
-                : "border-neutral-700 bg-white/5 text-neutral-300 hover:border-orange-300/50 hover:bg-white/10"
-            }`}
-          >
-            {category}
-          </button>
+      <div className="grid gap-6 md:grid-cols-2">
+        {REAL_PROJECTS.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
-
-      <div className="grid gap-6 lg:grid-cols-2">
-        {visibleProjects.map((project) => (
-          <ProjectCard key={project.name} project={{ ...project, tech: project.tags }} />
-        ))}
-      </div>
-
-      {!showAll && filteredProjects.length > 6 ? (
-        <div className="flex justify-center">
-          <button
-            type="button"
-            onClick={() => setShowAll(true)}
-            className="rounded-full border border-orange-400/40 bg-orange-500/10 px-6 py-3 text-sm font-semibold text-orange-100 transition hover:border-orange-300 hover:bg-orange-500/15"
-          >
-            Load More
-          </button>
-        </div>
-      ) : null}
     </section>
   );
 }
