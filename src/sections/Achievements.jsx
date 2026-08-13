@@ -1,18 +1,18 @@
 import SectionHeading from "@/components/SectionHeading";
-import { Award, Bot, Sparkles, Video } from "lucide-react";
+import { Award, Bot, Video } from "lucide-react";
 
 const achievementsList = [
   {
     id: "ai-prompting",
     icon: Bot,
     title: "AI-Powered App Builder",
-    description: "Successfully built and deployed production-ready web apps using 100% AI-assisted workflows and advanced prompt architecture.",
+    description: "Successfully built and deployed production-ready web apps using VS Code, Cline AI agents, and modern Next.js architecture.",
   },
   {
     id: "video-creation",
     icon: Video,
     title: "Short-Form Visual Storyteller",
-    description: "Produced engaging video content and post-production projects combining CapCut, AI voiceovers, and dynamic editing.",
+    description: "Produced engaging video reels and shorts combining CapCut, AI voiceovers, and dynamic visual storytelling.",
   },
 ];
 
@@ -35,7 +35,7 @@ export default function Achievements() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#FD6F00]">
               Talent OS
             </p>
-            <h3 className="mt-2 text-3xl font-black text-white">Level 5</h3>
+            <h3 className="mt-2 text-3xl font-black text-white">Level 6</h3>
             <p className="mt-3 text-sm leading-relaxed text-neutral-300">
               A milestone highlighting a strong foundation in professional capability, consistency, and continuous skill expansion.
             </p>
