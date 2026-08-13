@@ -11,7 +11,7 @@ const AboutMe = () => {
 
         {/* Bio Paragraph */}
         <p className="text-neutral-300 text-lg leading-relaxed mb-8">
-          I am an **AI-Native Web Builder** leveraging next-generation AI workflows to design, build, and deploy high-performance web applications at scale. Rather than relying solely on traditional manual coding, I utilize **VS Code alongside Cline AI** to rapidly transform concepts into fully functional digital products. Combining a CS50 computer science foundation, Talent OS Level 6 experience, and project management skills, I focus on delivering smart, AI-driven solutions efficiently.
+          I am an <strong className="text-white font-semibold">AI-Native Web Builder</strong> leveraging next-generation AI workflows to design, build, and deploy high-performance web applications at scale. Rather than relying solely on traditional manual coding, I utilize <strong className="text-white font-semibold">VS Code alongside Cline AI</strong> to rapidly transform concepts into fully functional digital products. Combining a CS50 computer science foundation, Talent OS Level 6 experience, and project management skills, I focus on delivering smart, AI-driven solutions efficiently.
         </p>
 
         {/* Core Strengths Grid */}
@@ -20,11 +20,23 @@ const AboutMe = () => {
             <h3 className="text-xl font-semibold mb-3 text-orange-400">
               AI & Tech Workflow
             </h3>
-            <ul className="list-disc list-inside text-neutral-400 space-y-2">
-              <li>**AI Development:** VS Code + Cline AI Agent</li>
-              <li>**Modern Stack:** Next.js, React, Tailwind CSS</li>
-              <li>**Deployment & Systems:** Vercel, Git, GitHub</li>
-              <li>**Core Fundamentals:** HTML/CSS, JS Logic, Basic Python</li>
+            <ul className="space-y-2.5 text-neutral-300 text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-orange-500 font-bold">•</span>
+                <span><strong className="text-white">AI Development:</strong> VS Code + Cline AI Agent</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-orange-500 font-bold">•</span>
+                <span><strong className="text-white">Modern Stack:</strong> Next.js, React, Tailwind CSS</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-orange-500 font-bold">•</span>
+                <span><strong className="text-white">Deployment & Systems:</strong> Vercel, Git, GitHub</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-orange-500 font-bold">•</span>
+                <span><strong className="text-white">Core Fundamentals:</strong> HTML/CSS, JS Logic, Basic Python</span>
+              </li>
             </ul>
           </div>
 
@@ -32,11 +44,23 @@ const AboutMe = () => {
             <h3 className="text-xl font-semibold mb-3 text-orange-400">
               Credentials & Background
             </h3>
-            <ul className="list-disc list-inside text-neutral-400 space-y-2">
-              <li>**CS Education:** CS50 Computer Science (1 Year)</li>
-              <li>**Practical Accomplishments:** Talent OS Level 6 Achiever</li>
-              <li>**Business & Management:** Certified Project Management & LCCI Level II</li>
-              <li>**Academic Degree:** B.A. (Myanmar)</li>
+            <ul className="space-y-2.5 text-neutral-300 text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-orange-500 font-bold">•</span>
+                <span><strong className="text-white">CS Education:</strong> CS50 Computer Science (1 Year)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-orange-500 font-bold">•</span>
+                <span><strong className="text-white">Practical Accomplishments:</strong> Talent OS Level 6 Achiever</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-orange-500 font-bold">•</span>
+                <span><strong className="text-white">Business & Management:</strong> Certified Project Management & LCCI Level II</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-orange-500 font-bold">•</span>
+                <span><strong className="text-white">Academic Degree:</strong> B.A. (Myanmar)</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -46,8 +70,8 @@ const AboutMe = () => {
           <h3 className="text-xl font-semibold mb-2 text-white">
             Career Focus
           </h3>
-          <p className="text-neutral-300">
-            Seeking **Remote AI Builder / AI Developer positions** and **Freelance Projects**. Dedicated to building modern AI-powered applications, automating digital workflows, and delivering fast results for clients worldwide.
+          <p className="text-neutral-300 text-sm leading-relaxed">
+            Seeking <strong className="text-white">Remote AI Builder / AI Developer positions</strong> and <strong className="text-white">Freelance Projects</strong>. Dedicated to building modern AI-powered applications, automating digital workflows, and delivering fast results for clients worldwide.
           </p>
         </div>
       </div>
