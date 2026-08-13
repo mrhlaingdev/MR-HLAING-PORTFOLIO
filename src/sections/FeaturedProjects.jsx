@@ -11,7 +11,7 @@ const REAL_PROJECTS = [
     tech: ["Next.js", "AI Integration", "Tailwind CSS", "Vercel"],
     github: "https://github.com/mrhlaingdev/The-Vet-Clinic-Deskboard",
     demo: "https://the-vet-clinic-deskboard.vercel.app",
-    image: "/the-vet-clinic.jpg.png",
+    image: "/the-vet-clinic.png",
   },
   {
     id: "pixel-forge",
@@ -22,7 +22,7 @@ const REAL_PROJECTS = [
     tech: ["React", "UI/UX", "Tailwind CSS", "Vercel"],
     github: "https://github.com/mrhlaingdev/pixel-forge-launcher",
     demo: "https://pixel-forge-launcher.vercel.app",
-    image: "/pixel-forge-luncher.jpg.png",
+    image: "/pixel-forge-luncher.png",
   },
   {
     id: "farm-to-table",
