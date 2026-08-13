@@ -1,84 +1,64 @@
-import React from 'react';
+import SectionHeading from "@/components/SectionHeading";
+import { Cpu, Award, Zap } from "lucide-react";
 
-const AboutMe = () => {
+const highlights = [
+  {
+    icon: Cpu,
+    title: "AI-Native Web Building",
+    desc: "Leveraging VS Code & Cline AI agents to turn complex ideas into production-ready Next.js apps.",
+  },
+  {
+    icon: Award,
+    title: "Proven Foundation",
+    desc: "CS50 background, Talent OS Level 6 achiever, plus certified in Project Management & LCCI Level II.",
+  },
+  {
+    icon: Zap,
+    title: "Rapid Execution",
+    desc: "Building smart, modern AI-driven digital products with speed, accuracy, and quality.",
+  },
+];
+
+export default function AboutMe() {
   return (
-    <section id="about" className="py-12 text-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="p-8 sm:p-10 rounded-3xl bg-neutral-900/60 border border-neutral-800 backdrop-blur-sm">
-          {/* Section Heading */}
-          <h2 className="text-3xl font-bold mb-6 text-orange-500">
-            About Me
-          </h2>
+    <section id="about" className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+      {/* Left Main About Content */}
+      <div className="glass-panel p-8 rounded-[18px] border border-neutral-800 bg-neutral-900/60 backdrop-blur-xl">
+        <SectionHeading
+          eyebrow="About"
+          title="Building high-performance digital products powered by modern AI workflows"
+          subtitle="Combining CS fundamentals, project management precision, and cutting-edge AI tools to build scalable web applications."
+        />
+        <p className="mt-6 text-base leading-relaxed text-neutral-300">
+          I am an AI-Native Web Builder focused on rapid execution without sacrificing quality. Holding a B.A. degree alongside CS50 training and Talent OS Level 6 accomplishments, I leverage VS Code and Cline AI agents to transform concepts into clean, functional, and modern web applications.
+        </p>
+      </div>
 
-          {/* Bio Paragraph */}
-          <p className="text-neutral-300 text-lg leading-relaxed mb-8">
-            I am an <strong className="text-white font-semibold">AI-Native Web Builder</strong> leveraging next-generation AI workflows to design, build, and deploy high-performance web applications at scale. Rather than relying solely on traditional manual coding, I utilize <strong className="text-white font-semibold">VS Code alongside Cline AI</strong> to rapidly transform concepts into fully functional digital products. Combining a CS50 computer science foundation, Talent OS Level 6 experience, and project management skills, I focus on delivering smart, AI-driven solutions efficiently.
-          </p>
-
-          {/* Core Strengths Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-2xl bg-neutral-900 border border-neutral-800/80">
-              <h3 className="text-xl font-semibold mb-4 text-orange-400">
-                AI & Tech Workflow
-              </h3>
-              <ul className="space-y-3 text-neutral-300 text-sm">
-                <li className="flex items-start gap-2.5">
-                  <span className="text-orange-500 font-bold">•</span>
-                  <span><strong className="text-white">AI Development:</strong> VS Code + Cline AI Agent</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-orange-500 font-bold">•</span>
-                  <span><strong className="text-white">Modern Stack:</strong> Next.js, React, Tailwind CSS</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-orange-500 font-bold">•</span>
-                  <span><strong className="text-white">Deployment & Systems:</strong> Vercel, Git, GitHub</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-orange-500 font-bold">•</span>
-                  <span><strong className="text-white">Core Fundamentals:</strong> HTML/CSS, JS Logic, Basic Python</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-neutral-900 border border-neutral-800/80">
-              <h3 className="text-xl font-semibold mb-4 text-orange-400">
-                Credentials & Background
-              </h3>
-              <ul className="space-y-3 text-neutral-300 text-sm">
-                <li className="flex items-start gap-2.5">
-                  <span className="text-orange-500 font-bold">•</span>
-                  <span><strong className="text-white">CS Education:</strong> CS50 Computer Science (1 Year)</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-orange-500 font-bold">•</span>
-                  <span><strong className="text-white">Practical Accomplishments:</strong> Talent OS Level 6 Achiever</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-orange-500 font-bold">•</span>
-                  <span><strong className="text-white">Business & Management:</strong> Certified Project Management & LCCI Level II</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-orange-500 font-bold">•</span>
-                  <span><strong className="text-white">Academic Degree:</strong> B.A. (Myanmar)</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Vision / Goal */}
-          <div className="mt-6 p-6 rounded-2xl bg-neutral-900/80 border border-neutral-800">
-            <h3 className="text-xl font-semibold mb-2 text-white">
-              Career Focus
-            </h3>
-            <p className="text-neutral-300 text-sm leading-relaxed">
-              Seeking <strong className="text-white">Remote AI Builder / AI Developer positions</strong> and <strong className="text-white">Freelance Projects</strong>. Dedicated to building modern AI-powered applications, automating digital workflows, and delivering fast results for clients worldwide.
-            </p>
-          </div>
+      {/* Right Core Highlights */}
+      <div className="glass-panel p-6 rounded-[18px] border border-neutral-800 bg-neutral-900/60 backdrop-blur-xl flex flex-col justify-between">
+        <h3 className="text-sm font-semibold uppercase tracking-wider text-orange-400 mb-4">
+          Core Focus
+        </h3>
+        <div className="flex flex-col gap-4">
+          {highlights.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.title}
+                className="flex items-start gap-4 rounded-[14px] border border-neutral-800 bg-[#1E1E1E]/80 p-4 transition hover:border-orange-500/40"
+              >
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-orange-500/10 text-orange-400 border border-orange-500/20">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-white">{item.title}</h4>
+                  <p className="mt-1 text-xs leading-relaxed text-neutral-400">{item.desc}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
   );
-};
-
-export default AboutMe;
+}
